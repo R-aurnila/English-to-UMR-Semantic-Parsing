@@ -124,8 +124,8 @@ Replication of **SETUP: Sentence-level English-To-Uniform Meaning Representation
 | R2, clean split B | −0.32 | −0.78 to +0.13 |
 
 - **No fix helped**; every range includes 0
-- 4× more normal-English examples (share 16% → 43%), no change → **data imbalance likely not the cause**
-- More likely: normal English simply harder (longer, more varied, more complex)
+- Normal English weighted 4× more (share 16% → 43%), no change → **under-weighting is not the cause**
+- Open question: whether more *distinct* normal-English data would help (repetition adds no new information)
 
 ---
 
@@ -135,7 +135,7 @@ Replication of **SETUP: Sentence-level English-To-Uniform Meaning Representation
 2. **Duplicates inflate scores:** ~half of a random test set in train; clean split 86.9 → 79.4 AnCast, all of the drop on Minecraft
 3. **Real weakness = normal English:** ~26 AnCast below game chat
 4. **General LLM no fix:** Qwen3-8B close on game chat, 9–10 worse on normal English
-5. **More data no fix:** no significant gain → sentence difficulty, not data imbalance
+5. **Re-weighting no fix:** repeating normal-English data gave no significant gain; more distinct data untested
 6. **Tooling issues:** AMRBART decoder drops UMR attributes; AnCast can silently score one sentence
 
 ## Limitations
