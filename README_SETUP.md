@@ -15,7 +15,7 @@ Replication of **SETUP: Sentence-level English-To-Uniform Meaning Representation
 - **UMR v2.0, English only**, as in the paper (§3.3)
 - ~84% **Minecraft game chat** (e.g. `[Builder puts down a blue block at X:1 Y:2 Z:3]`), the rest normal English (news, stories)
 - All results split into **Minecraft vs. non-Minecraft**, same rule as the paper (§4.1)
-- **66 overlap graphs not removed:** paper drops UMR graphs also in AMR 3.0 training data (§3.4); finding them needs the licensed AMR 3.0 corpus (LDC), not available; ≤66 of ~30k sentences
+- **66 overlap graphs not removed:** paper excludes 66 graphs that overlap with AMR training sentences (§3.4); kept here for simplicity (66 of ~30k sentences)
 
 ### Two splits
 
@@ -124,7 +124,7 @@ Replication of **SETUP: Sentence-level English-To-Uniform Meaning Representation
 | R2, clean split B | −0.32 | −0.78 to +0.13 |
 
 - **No fix helped**; every range includes 0
-- ~3× more normal-English data, no change → **data imbalance likely not the cause**
+- 4× more normal-English examples (share 16% → 43%), no change → **data imbalance likely not the cause**
 - More likely: normal English simply harder (longer, more varied, more complex)
 
 ---
@@ -142,7 +142,7 @@ Replication of **SETUP: Sentence-level English-To-Uniform Meaning Representation
 
 - One run per setting, no repeated seeds
 - New random test sample (paper's not public)
-- 66 AMR-overlap graphs not removed
+- 66 AMR-overlap graphs not removed (for simplicity)
 - Greedy decoding (LLM) vs. beam search (AMRBART)
 
 ## Files
